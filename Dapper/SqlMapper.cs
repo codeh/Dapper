@@ -2578,7 +2578,7 @@ namespace Dapper
                     var nullType = Nullable.GetUnderlyingType(propType);
                     bool callSanitize = false;
 
-                    if ((nullType ?? propType).IsEnum())
+                    if ((nullType ?? propType).IsEnum() && handler == null)
                     {
                         if (nullType != null)
                         {
